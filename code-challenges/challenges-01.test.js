@@ -85,8 +85,9 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  times.forEach (
-    callback(arr, num));
+  for (let i = 0; i < times; i++) {
+    callback(arr,num);
+  }
   return arr;
 };
 
