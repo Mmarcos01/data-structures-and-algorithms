@@ -5,10 +5,11 @@ CHALLENGE 1 - Review
 
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
 ------------------------------------------------------------------------------------------------ */
-
-const replaceZeros = (string) => {
-  // Solution code here...
-}
+//did not have to do this one but attempted
+// const replaceZeros = (string) => {
+//   const regex = 0;
+//   (string.replace(regex, 'zero'));
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -17,8 +18,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  const newArray = [];
-  arr.map(num => newArray.push(num + 1));
+  let newArray = arr.map(num => (num + 1));
   return newArray;
 };
 
@@ -29,8 +29,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  const strArray = [];
-  arr.map(str => strArray.push(str + '?'));
+  let strArray = arr.map(str => (str + '?'));
   return strArray;
 };
 
@@ -46,18 +45,20 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
 
-// must rewrite to use for loop
+
 const forLoopTwoToThe = (arr) => {
+
   const newArray = [];
-  // for (let i=0; i < newArray; i++){
-  arr.map(value => newArray.push(Math.pow(2, value)));
+  for (let i in arr) {
+    newArray.push(Math.pow(2, arr[i]));
+  }
   return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1, but uses forEach instead of a for loop.
+Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
@@ -73,8 +74,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  const newArray = [];
-  arr.map(value => newArray.push(Math.pow(2, value)));
+  let newArray = arr.map(value => (Math.pow(2, value)));
   return newArray;
 };
 
