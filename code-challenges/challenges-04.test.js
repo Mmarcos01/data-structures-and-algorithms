@@ -22,11 +22,14 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  const newArray = [];
-  arr.map(value => newArray.push(callback(value)));
+  //   const newArray = [];
+  //   arr.map(value => newArray.push(callback(value)));
 
-  return newArray;
+  //   return newArray;
+  // *** dont need return or to create a new array with .map:
+  return arr.map(callback);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
