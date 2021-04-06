@@ -117,8 +117,8 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => { 
-  return str.split (' ').reduce ((rev, char) => char + rev, ' ');
+const reversedString = (str) => {
+  return str.split ('').reduce ((rev, char) => char + rev, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
