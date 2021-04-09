@@ -22,9 +22,7 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
-  return arr.map((index) => index.name.split('').reverse().join(''));
-};
+const getNames = (arr) => arr.map((index) => index.name.split('').reverse().join(''));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,9 +31,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
-  return str.concat( ' The end.');
-};
+const appendTheEnd = (str) => str.concat( ' The end.');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
