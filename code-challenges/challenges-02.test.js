@@ -17,10 +17,8 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {
-  let newArray = arr.map(num => (num + 1));
-  return newArray;
-};
+const addOne = (arr) => arr.map(num => (num + 1));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -28,10 +26,7 @@ CHALLENGE 3
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
-const addQuestion = (arr) => {
-  let strArray = arr.map(str => (str + '?'));
-  return strArray;
-};
+const addQuestion = (arr) => arr.map(str => (str + '?'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -73,10 +68,7 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1 and your forEachTwoToThe function from challenge 2, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {
-  let newArray = arr.map(value => (Math.pow(2, value)));
-  return newArray;
-};
+const mapTwoToThe = (arr) => arr.map(value => (Math.pow(2, value)));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -89,9 +81,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 ------------------------------------------------------------------------------------------------ */
 
-const charCode = (arr) => {
-  return arr.map(value => value.charCodeAt());
-};
+const charCode = (arr) => arr.map(value => value.charCodeAt());
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal

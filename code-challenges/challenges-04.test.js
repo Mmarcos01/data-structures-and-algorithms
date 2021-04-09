@@ -21,14 +21,12 @@ function lower(str) {
   return str.toLowerCase();
 }
 
-const updateAnimal = (arr, callback) => {
+const updateAnimal = (arr, callback) => arr.map(callback);
   //   const newArray = [];
   //   arr.map(value => newArray.push(callback(value)));
-
+  // return arr.map(callback);
   //   return newArray;
   // *** dont need return or to create a new array with .map:
-  return arr.map(callback);
-};
 
 
 /* ------------------------------------------------------------------------------------------------

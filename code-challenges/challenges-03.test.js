@@ -35,9 +35,7 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 // MDN: The filter() method creates a new array with all elements that pass the test implemented by the provided function.
 
-const typeNum = (arr) => {
-  return arr.filter(index => typeof (index) === 'number');
-};
+const typeNum = (arr) => arr.filter(index => typeof (index) === 'number');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
