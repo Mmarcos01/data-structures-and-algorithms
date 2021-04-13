@@ -78,9 +78,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  return arr.split('');
-};
+const wordsToCharList = (arr) => arr.split('');
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,9 +124,17 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  ingredients
+  const ingredients = recipe.ingredients;
+  for (let i = 0; i < ingredients.length; i++) {
+    let x = ingredients[i].indexOf(' ') + 1;
+    let newItem = ingredients[i].slice(x);
+    let index = newItem.indexOf(' ') + 1;
+    result.push(newItem.slice(index));
+  }
   return result;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
