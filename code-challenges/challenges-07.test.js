@@ -122,15 +122,27 @@ const gruffaloCrumble = {
 };
 
 
+// const listFoods = (recipe) => {
+//   let result = [];
+//   const ingredients = recipe.ingredients;
+//   for (let i = 0; i < ingredients.length; i++) {
+//     let x = ingredients[i].indexOf(' ') + 1;
+//     let newItem = ingredients[i].slice(x);
+//     let index = newItem.indexOf(' ') + 1;
+//     result.push(newItem.slice(index));
+//   }
+//   return result;
+// };
+
+
+
 const listFoods = (recipe) => {
   let result = [];
-  const ingredients = recipe.ingredients;
-  for (let i = 0; i < ingredients.length; i++) {
-    let x = ingredients[i].indexOf(' ') + 1;
-    let newItem = ingredients[i].slice(x);
-    let index = newItem.indexOf(' ') + 1;
-    result.push(newItem.slice(index));
-  }
+  recipe.ingredients.forEach(ingredient => {
+    let withoutAmounts = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnits = withoutAmounts.slice(withoutAmounts.indexOf(' ') + 1);
+    result.push(withoutUnits);
+  });
   return result;
 };
 
