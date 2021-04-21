@@ -109,13 +109,15 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  Object.values(arr).forEach(character => {
-    houses.push(character.house);
-  });
-  return houses;
-};
+// const getHouses = (arr) => {
+//   let houses = [];
+//   Object.values(arr).forEach(character => {
+//     houses.push(character.house);
+//   });
+//   return houses;
+// };
+
+const getHouses = (arr) => arr.map(character => character.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -129,7 +131,20 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) =>
+const hasChildrenValues = (arr, character) => {
+  for (let obj of arr) {
+    if (Object.values(obj).includes(character)) {
+      return obj.children && obj.children.length;
+    }
+  }
+  return false;
+};
+
+// code review without using Object.values
+// const hasChildrenValues = (arr, character) => {
+//   let obj = arr.find(element => element.name === character);
+//   return obj && obj.children && obj.children.length;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
