@@ -114,8 +114,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   let dataArr = [];
-  hours.forEach(item => dataArr.push(item));
+  hours.forEach((hour, index) => dataArr.push({ sales: `${data[index]} cookies`, time: hour }));
+  return dataArr;
 };
+
+// code review: without forEach:
+// dataArr = hours.map((hour, index) => ({sales: `${data[index]} cookies`, time: hour}));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,7 +143,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
