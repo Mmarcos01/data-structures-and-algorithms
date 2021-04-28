@@ -36,16 +36,23 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
+// const count = (target, input) => {
+//   let array = [];
+//   input.map((i) => {
+//     i.map((j) => {
+//       if (j === target) {
+//         array.push(1);
+//       }
+//     });
+//   });
+//   return array.length;
+// };
+
+//code review answer, using reduce
 const count = (target, input) => {
-  let array = [];
-  input.map((i) => {
-    i.map((j) => {
-      if (j === target) {
-        array.push(1);
-      }
-    });
-  });
-  return array.length;
+  return input.reduce(
+    (answerSoFar, innerArr) =>
+      innerArr.filter(x => x === target).length + answerSoFar, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,15 +87,21 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  let arr = [];
-  for (let i = 0; i < input.length; i++) {
-    let inArr = input[i];
-    arr.push(inArr.filter(num => ((num % 5 === 0) && typeof (num) === 'number')).map(num => Math.pow(2, num)));
-  }
-  return arr;
-};
+// const divisibleByFiveTwoToThePower = (input) => {
+//   let arr = [];
+//   for (let i = 0; i < input.length; i++) {
+//     let inArr = input[i];
+//     arr.push(inArr.filter(num => ((num % 5 === 0) && typeof (num) === 'number')).map(num => Math.pow(2, num)));
+//   }
+//   return arr;
+// };
 
+//code review answer using map and filter
+const divisibleByFiveTwoToThePower = (input) => {
+  return input.map(arr =>
+    arr.filter(x => ((typeof x) === 'number') && (x % 5 === 0))
+      .map(x => Math.pow(2, x)));
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
 
@@ -161,7 +174,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 
 let findShortest = (data) => {
-  let shortest = data.filter( character => character.height).reduce((a, b) => (b.height > a.height ? b : a));
+  let shortest = data.filter(character => character.height).reduce((a, b) => (b.height > a.height ? b : a));
   return shortest.name;
 };
 
