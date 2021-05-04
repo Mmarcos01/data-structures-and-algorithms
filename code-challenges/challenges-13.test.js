@@ -17,6 +17,8 @@ const longestString = (arr) => {
   return arr.indexOf(longest);
 };
 
+// const longestString = (arr) => arr.length ? arr.indexOf(arr.reduce((a, b) => a.length > b.length ? a : b)) : -1;
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -57,6 +59,7 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
+  return str.split('').filter((a, b) => b % 2 === 1).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,14 +69,14 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  let x = true;
+  let isHappy = true;
   for (let i = 0; i < arr.length; i++) {
     if (!arr[i].includes(': ) ')) {
-      x = false;
+      isHappy= false;
       break;
     }
   }
-  return x;
+  return isHappy;
 };
 
 /* ------------------------------------------------------------------------------------------------
