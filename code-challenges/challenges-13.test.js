@@ -68,16 +68,18 @@ CHALLENGE 6
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
+
 const allHappy = (arr) => {
   let isHappy = true;
   for (let i = 0; i < arr.length; i++) {
-    if (!arr[i].includes(': ) ')) {
+    if (!arr[i].includes(':)')) {
       isHappy= false;
       break;
     }
   }
   return isHappy;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
