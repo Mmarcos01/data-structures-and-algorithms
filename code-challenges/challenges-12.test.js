@@ -45,9 +45,13 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  let regex = /[a-zA-Z]\d+/;
-  return regex.test(string);
+  return /[a-zA-Z]\d+/.test(string);
 };
+
+// const hasNumber = (string) => {
+//   let regex = /[a-zA-Z]\d+/;
+//   return regex.test(string);
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -66,9 +70,13 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let regex = /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.com$|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.net|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.org/;
-  return regex.test(email);
+  return /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.com$|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.net|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.org/.test(email);
 };
+
+// const validateEmail = (email) => {
+//   let regex = /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.com$|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.net|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.org/;
+//   return regex.test(email);
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -92,9 +100,13 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let x = /^(\((\d{3})\)[\s]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/;
-  return x.test(phoneNumber);
+  return /^(\((\d{3})\)[\s]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/.test(phoneNumber);
 };
+
+// const validatePhoneNumber = (phoneNumber) => {
+//   let x = /^(\((\d{3})\)[\s]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/;
+//   return x.test(phoneNumber);
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
