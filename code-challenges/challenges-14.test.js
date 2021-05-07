@@ -1,5 +1,7 @@
 'use strict';
 
+//Thanks to help from Tom McGuire on much of these challenges
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
