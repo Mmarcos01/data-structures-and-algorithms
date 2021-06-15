@@ -18,3 +18,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 [Code Challenge: Class 02](/python/code_challenges/array-shift/README.md)
 
+[Code Challenge: Class 03](/python/code_challenges/array-binary-search/README.md)
