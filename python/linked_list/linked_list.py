@@ -41,18 +41,18 @@ class LinkedList:
             self.head = new_node
         else:
             current_node = self.head
-            while current_node.next is not None:
+            while current_node.next:
                 current_node = current_node.next
             current_node.next = new_node
 
     def insertAfter(self, value, new_value):
         current = self.head
-        while current.next is not None:
+        while current.next:
             if value == current.value:
                 break
             current = current.next
         if current is None:
-            print("cant find it")
+            print("none found")
         else:
             new_node = Node(new_value)
             new_node.next = current.next
@@ -60,12 +60,12 @@ class LinkedList:
 
     def insertBefore(self, value, new_value):
         current = self.head
-        while current.next is not None:
+        while current.next:
             if value == current.next.value:
                 break
             current = current.next
         if current is None:
-            print("cant find it")
+            print("none found")
         else:
             new_node = Node(new_value)
             new_node.next = current.next
