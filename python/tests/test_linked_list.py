@@ -38,3 +38,24 @@ def test_to_string():
     actual = ll1.__str__()
     expected = "{'green'} -> {'blue'} -> {'red'} -> None"
     assert actual == expected
+
+def test_append():
+    my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
+    my_list.append('orange')
+    actual = my_list.__str__()
+    expected = "{'green'} -> {'blue'} -> {'red'} -> {'orange'} -> None"
+    assert actual == expected
+
+def test_insertAfter():
+    my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
+    my_list.insertAfter('blue', 'orange')
+    actual = my_list.__str__()
+    expected = "{'green'} -> {'blue'} -> {'orange'} -> {'red'} -> None"
+    assert actual == expected
+
+def test_insertBefore():
+    my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
+    my_list.insertBefore('blue', 'orange')
+    actual = my_list.__str__()
+    expected = "{'green'} -> {'orange'} -> {'blue'} -> {'red'} -> None"
+    assert actual == expected
