@@ -53,10 +53,9 @@ class LinkedList:
             current = current.next
         if current is None:
             print("none found")
-        else:
-            new_node = Node(new_value)
-            new_node.next = current.next
-            current.next = new_node
+        new_node = Node(new_value)
+        new_node.next = current.next
+        current.next = new_node
 
     def insertBefore(self, value, new_value):
         current = self.head
@@ -66,7 +65,6 @@ class LinkedList:
             current = current.next
         if current is None:
             print("none found")
-        else:
-            new_node = Node(new_value)
-            new_node.next = current.next
-            current.next = new_node
+        new_node = Node(new_value)
+        new_node.next = current.next
+        current.next = new_node
