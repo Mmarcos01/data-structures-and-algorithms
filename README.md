@@ -21,3 +21,5 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 [Code Challenge: Class 03](/python/code_challenges/array-binary-search/README.md)
 
 [Code Challenge: Class 04](/python/linked_list/README.md)
+
+[Code Challenge: Class 05](/python/linked_list/README.md)
