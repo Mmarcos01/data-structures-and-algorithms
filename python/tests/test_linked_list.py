@@ -59,3 +59,42 @@ def test_insertBefore():
     actual = my_list.__str__()
     expected = "{'green'} -> {'orange'} -> {'blue'} -> {'red'} -> None"
     assert actual == expected
+
+def test_empty_linked_list():
+    empty = LinkedList()
+    assert empty
+
+def test_k_is_greater_than_ll_length():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d").append("e")
+    actual = ll1.kth_from_the_end(2)
+    expected = "c"
+    assert actual == expected
+
+def test_k_and_the_length_of_the_list_are_the_same():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d").append("e")
+    actual = ll1.kth_from_the_end(5)
+    expected = "a"
+    assert actual == expected
+
+def test_k_is_negative():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d").append("e")
+    actual = ll1.kth_from_the_end(-5)
+    expected = "K is negative"
+    assert actual == expected
+
+def test_linked_list_is_of_a_size_1():
+    ll1 = LinkedList()
+    ll1.append("a")
+    actual = ll1.kth_from_the_end(1)
+    expected = "a"
+    assert actual == expected
+
+def test_k_is_somewhere_in_the_middle_of_the_linked_list():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d").append("e")
+    actual = ll1.kth_from_the_end(3)
+    expected = "b"
+    assert actual == expected

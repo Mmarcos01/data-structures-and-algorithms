@@ -44,6 +44,7 @@ class LinkedList:
             while current_node.next:
                 current_node = current_node.next
             current_node.next = new_node
+        return self
 
     def insertAfter(self, value, new_value):
         current = self.head
@@ -51,8 +52,8 @@ class LinkedList:
             if value == current.value:
                 break
             current = current.next
-        if current is None:
-            print("none found")
+     # if current is None: # if there is no head print message
+ #     print("none found")
         new_node = Node(new_value)
         new_node.next = current.next
         current.next = new_node
@@ -68,3 +69,30 @@ class LinkedList:
         new_node = Node(new_value)
         new_node.next = current.next
         current.next = new_node
+
+    def kth_from_the_end(self, k):
+
+        if k < 0:
+            return "K is negative"
+
+        if self.head is None:
+            return None
+
+        count = 0
+        current = self.head
+
+        while current:
+            count += 1
+            current = current.next
+
+        if count < k:
+            raise Exception ('k is larger than link list')
+
+        current = self.head
+        count = count - k
+
+        while count > 1:
+            current = current.next
+            count -= 1
+
+        return current.value

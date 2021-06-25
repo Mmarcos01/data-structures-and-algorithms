@@ -9,6 +9,13 @@ Write a function called insertAfter(value, newVal) which adds a new node with th
 
 ![](ll-insertions.PNG)
 
+
+# Challenge Summary 2
+Return the node’s value that is k places from the tail of the linked list.
+
+![](linked-list-kth.PNG)
+
 ### Change Log
 
 1.1: Completed whiteboarding process - 14 Jun 2021
+1.2: Completed whiteboarding process for ll kth from end - 24 Jun 2021
