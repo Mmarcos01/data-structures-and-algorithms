@@ -1,4 +1,4 @@
-# Challenge Summary
+# Challenge Summary 1
  Write a function called .append(value) which adds a new node with the given value to the end of the list
 
  Write a function called insertBefore(value, newVal) which adds a new node with the given new value immediately before the first value node
@@ -11,7 +11,9 @@ Write a function called insertAfter(value, newVal) which adds a new node with th
 
 
 # Challenge Summary 2
-Return the node’s value that is k places from the tail of the linked list.
+Write a function that returns the node’s value that is k places from the tail of the linked list.
+
+## Whiteboard Process
 
 ![](linked-list-kth.PNG)
 
