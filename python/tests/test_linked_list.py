@@ -1,4 +1,4 @@
-from linked_list.linked_list import LinkedList, Node
+from linked_list.linked_list import LinkedList, Node, zipLists
 
 def test_import():
     assert LinkedList
@@ -98,3 +98,12 @@ def test_k_is_somewhere_in_the_middle_of_the_linked_list():
     actual = ll1.kth_from_the_end(3)
     expected = "b"
     assert actual == expected
+
+def test_zip_two_lists():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    ll1.append("a").append("c").append("e")
+    ll2.append("b").append("d").append("f")
+    actual = zipLists(ll1,ll2)
+    expected = "{'a'} -> {'b'} -> {'c'} -> {'d'} -> {'e'} -> {'f'} -> None"
+    assert str(actual) == expected
