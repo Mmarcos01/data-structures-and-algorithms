@@ -52,8 +52,8 @@ def test_dequeue():
     my_queue.enqueue('a')
     my_queue.enqueue('b')
     my_queue.enqueue('c')
-    actual = my_queue.rear.value
-    expected = 'c'
+    actual = my_queue.dequeue()
+    expected = 'b'
     assert actual == expected
 
 def test_queue_peek():

@@ -54,7 +54,7 @@ class Queue:
 
     def __init__(self, front = None):
         self.front = front
-        self.rear = None
+        # self.rear = None
 
     def isEmpty(self):
         if self.front == None:
