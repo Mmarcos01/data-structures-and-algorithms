@@ -83,3 +83,23 @@ class Queue:
         if self.isEmpty():
             raise Exception("No Peeking. Queue is empty!")
         return self.front.value
+
+class PseudoQueue:
+
+    def __init__(self):
+        self.stack1 = Stack()
+        self.stack2 = Stack()
+
+    def enqueue(self, value):
+        self.stack1.push(value)
+
+    # check the top, if exists, take the value and push it into stack 2
+    def dequeue(self):
+        while self.stack1:
+            removed = self.stack1.pop()
+            self.stack2.push(removed)
+
+        while self.stack2:
+            removed = self.stack2.pop()
+            self.stack2.push(removed)
+            return self.stack2.pop()

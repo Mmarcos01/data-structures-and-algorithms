@@ -1,6 +1,6 @@
 # Stacks and Queues
 
-## Challenge Summary
+## Challenge 1  Summary
 
 ## Stack
 
@@ -62,6 +62,33 @@ Should raise exception when called on empty stack
 Arguments: none
 Returns: Boolean indicating whether or not the queue is empty
 
+
+## Challenge 2  Summary
+
+Implement a Queue using two Stacks.
+
+PseudoQueue class will implement our standard queue interface (Enqueue, Dequeue)
+
+Internally, utilize 2 Stack instances to create and manage the queue
+
+Methods:
+
+**enqueue**
+
+Arguments: value
+Inserts value into the PseudoQueue, using a first-in, first-out approach.
+
+**dequeue**
+
+Arguments: none
+Extracts a value from the PseudoQueue, using a first-in, first-out approach
+
+## Whiteboard
+
+![](stack-queue-pseudo.PNG)
+
 ### Change Log
 
 1.1: Completed testing for stacks and queues - 6 Jul 2021
+
+1.2: Completed testing for pseudoque - 7 Jul 2021
