@@ -95,11 +95,13 @@ class PseudoQueue:
 
     # check the top, if exists, take the value and push it into stack 2
     def dequeue(self):
-        while self.stack1:
-            removed = self.stack1.pop()
-            self.stack2.push(removed)
-
-        while self.stack2:
-            removed = self.stack2.pop()
-            self.stack2.push(removed)
-            return self.stack2.pop()
+        if self.stack1.isEmpty():
+            raise Exception("Can't dequeue. Stack is empty.")
+        while not self.stack1.isEmpty():
+            temp = self.stack1.pop()
+            self.stack2.push(temp)
+        removed = self.stack2.pop()
+        while not self.stack2.isEmpty():
+            popped = self.stack2.pop()
+            self.stack1.push(popped)
+        return removed

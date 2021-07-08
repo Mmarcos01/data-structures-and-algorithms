@@ -73,14 +73,14 @@ def test_pseudo_enqueue_single():
     expected = 5
     assert actual == expected
 
-# def test_pseudo_enqueue_multiple():
-#     my_pseudo = PseudoQueue()
-#     my_pseudo.enqueue(10)
-#     my_pseudo.enqueue(15)
-#     my_pseudo.enqueue(20)
-#     actual = my_pseudo.stack1.top.value
-#     expected = 20
-#     assert actual == expected
+def test_pseudo_enqueue_multiple():
+    my_pseudo = PseudoQueue()
+    my_pseudo.enqueue(10)
+    my_pseudo.enqueue(15)
+    my_pseudo.enqueue(20)
+    actual = my_pseudo.stack1.top.value
+    expected = 20
+    assert actual == expected
 
 # pseudo dequeue returns removed rear
 def test_pseudo_dequeue():
@@ -88,7 +88,6 @@ def test_pseudo_dequeue():
     my_pseudo.enqueue('a')
     my_pseudo.enqueue('b')
     my_pseudo.enqueue('c')
-    my_pseudo.enqueue('d')
     actual = my_pseudo.dequeue()
-    expected = 'c'
+    expected = 'a'
     assert actual == expected
