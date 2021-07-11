@@ -1,4 +1,4 @@
-from stacks_queues.stacks_queues import Node, Stack, Queue
+from stacks_queues.stacks_queues import Node, Stack, Queue, PseudoQueue
 
 def test_stack_isEmpty():
     my_stack = Stack()
@@ -47,11 +47,13 @@ def test_enqueue():
     expected = 'c'
     assert actual == expected
 
+# returns new front after initial front removed
 def test_dequeue():
     my_queue = Queue()
     my_queue.enqueue('a')
     my_queue.enqueue('b')
     my_queue.enqueue('c')
+    my_queue.enqueue('d')
     actual = my_queue.dequeue()
     expected = 'b'
     assert actual == expected
@@ -61,5 +63,31 @@ def test_queue_peek():
     my_queue.enqueue('a')
     my_queue.enqueue('b')
     actual = my_queue.peek()
+    expected = 'a'
+    assert actual == expected
+
+def test_pseudo_enqueue_single():
+    my_pseudo = PseudoQueue()
+    my_pseudo.enqueue(5)
+    actual = my_pseudo.stack1.top.value
+    expected = 5
+    assert actual == expected
+
+def test_pseudo_enqueue_multiple():
+    my_pseudo = PseudoQueue()
+    my_pseudo.enqueue(10)
+    my_pseudo.enqueue(15)
+    my_pseudo.enqueue(20)
+    actual = my_pseudo.stack1.top.value
+    expected = 20
+    assert actual == expected
+
+# pseudo dequeue returns removed rear
+def test_pseudo_dequeue():
+    my_pseudo = PseudoQueue()
+    my_pseudo.enqueue('a')
+    my_pseudo.enqueue('b')
+    my_pseudo.enqueue('c')
+    actual = my_pseudo.dequeue()
     expected = 'a'
     assert actual == expected
