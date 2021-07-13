@@ -1,4 +1,12 @@
+import pytest
 from stacks_queues.stacks_queues import Node, Stack, Queue, PseudoQueue, AnimalShelter
+
+def test_instantiate_empty_node():
+    node1 = Node(1)
+    assert node1.value == 1
+    assert node1.next == None
+
+# ======== Stack ========
 
 def test_stack_isEmpty():
     my_stack = Stack()
@@ -43,6 +51,8 @@ def test_stack_peek():
     expected = 2
     assert actual == expected
 
+# ======== Queue ========
+
 def test_queue_isEmpty():
     my_queue = Queue()
     actual = my_queue.isEmpty()
@@ -76,6 +86,8 @@ def test_queue_peek():
     expected = 'a'
     assert actual == expected
 
+# ======== PseudoQueue ========
+
 def test_pseudo_enqueue_single():
     my_pseudo = PseudoQueue()
     my_pseudo.enqueue(5)
@@ -101,23 +113,113 @@ def test_pseudo_dequeue():
     expected = 'a'
     assert actual == expected
 
-def test_animal_shelter():
-    pass
+# ======== AnimalShelter ========
+
+def test_empty_animal_shelter():
+    new_shelter = AnimalShelter()
+    assert new_shelter.front == None
+    assert new_shelter.rear == None
+    assert new_shelter.length == 0
 
 def test_animal_enqueue():
-    pass
+    new_shelter = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "cat"}
+    new_shelter.enqueue(input1)
+    new_shelter.enqueue(input2)
+    assert new_shelter.rear.value["animal"] == "cat"
 
-def test_animal_dequeue():
-    pass
+def test_dequeue_pref_in_front():
+    new_shelter = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "cat"}
+    new_shelter.enqueue(input1)
+    new_shelter.enqueue(input2)
+    actual = new_shelter.dequeue("dog")
+    expected = "dog"
+    assert actual == expected
+
+def test_dequeue_pref_in_middle():
+    new_shelter = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "cat"}
+    input3 = {"animal": "dog"}
+    new_shelter.enqueue(input1)
+    new_shelter.enqueue(input2)
+    new_shelter.enqueue(input3)
+    actual = new_shelter.dequeue("cat")
+    expected = "cat"
+    assert actual == expected
+
+def test_dequeue_pref_at_end():
+    new_shelter = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "dog"}
+    input3 = {"animal": "cat"}
+    new_shelter.enqueue(input1)
+    new_shelter.enqueue(input2)
+    new_shelter.enqueue(input3)
+    actual = new_shelter.dequeue("cat")
+    expected = "cat"
+    assert actual == expected
+
+# ======== Pytest Fixtures ========
+
+def test_dequeue_on_empty_queue_raises_exception():
+    empty_shelter = AnimalShelter()
+    with pytest.raises(Exception):
+        empty_shelter.dequeue("dog")
 
 
+def test_dequeue_with_pref_animal_not_in_shelter(all_dogs):
+    actual = all_dogs.dequeue("cat")
+    expected = None
+    assert actual == expected
+    assert all_dogs.length == 5
 
-# --------------------------------
+@pytest.fixture
+def new_shelter():
+    new_shelter = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "dog"}
+    input3 = {"animal": "cat"}
+    input4 = {"animal": "dog"}
+    input5 = {"animal": "cat"}
+    new_shelter.enqueue(input1)
+    new_shelter.enqueue(input2)
+    new_shelter.enqueue(input3)
+    new_shelter.enqueue(input4)
+    new_shelter.enqueue(input5)
+    return new_shelter
 
-# def test_pyfixture(string):
-#     actual = string
-#     expected = 'yes'
-#     assert actual == expected
 
-# @pytest.fixture:
-#     def string():
+@pytest.fixture
+def all_dogs():
+    all_dogs = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "dog"}
+    input3 = {"animal": "dog"}
+    input4 = {"animal": "dog"}
+    input5 = {"animal": "dog"}
+    all_dogs.enqueue(input1)
+    all_dogs.enqueue(input2)
+    all_dogs.enqueue(input3)
+    all_dogs.enqueue(input4)
+    all_dogs.enqueue(input5)
+    return all_dogs
+
+
+@pytest.fixture
+def cat_last():
+    cat_last = AnimalShelter()
+    input1 = {"animal": "dog"}
+    input2 = {"animal": "dog"}
+    input3 = {"animal": "dog"}
+    input4 = {"animal": "dog"}
+    input5 = {"animal": "cat"}
+    cat_last.enqueue(input1)
+    cat_last.enqueue(input2)
+    cat_last.enqueue(input3)
+    cat_last.enqueue(input4)
+    cat_last.enqueue(input5)
+    return cat_last

@@ -106,6 +106,14 @@ Return: either a dog or a cat, based on preference. If pref is not "dog" or "cat
 
 ![](stack-queue-animal-shelter.PNG)
 
+## Collaborators
+
+Davee Sok
+Prabin Singh
+Daniel Dills
+Wondwosen
+Garfield Grant
+
 ### Change Log
 
 1.1: Completed testing for stacks and queues - 6 Jul 2021
@@ -113,3 +121,4 @@ Return: either a dog or a cat, based on preference. If pref is not "dog" or "cat
 1.2: Completed testing for pseudoqueue - 7 Jul 2021
 
 1.2: Completed whiteboard for AnimalShelter - 12 Jul 2021
+
