@@ -1,4 +1,4 @@
-from stacks_queues.stacks_queues import Node, Stack, Queue, PseudoQueue
+from stacks_queues.stacks_queues import Node, Stack, Queue, PseudoQueue, AnimalShelter
 
 def test_stack_isEmpty():
     my_stack = Stack()
@@ -10,8 +10,8 @@ def test_stack_push_multiple():
     my_stack = Stack()
     my_stack.push('a')
     my_stack.push('b')
-    actual = my_stack.__str__()
-    expected = "{'b'} -> {'a'} -> None"
+    actual = my_stack.top.next.value
+    expected = 'a'
     assert actual == expected
 
 def test_stack_pop():
@@ -24,12 +24,23 @@ def test_stack_pop():
     expected = 'b'
     assert actual == expected
 
+def test_stack_pop_multi():
+    my_stack = Stack()
+    my_stack.push('a')
+    my_stack.push('b')
+    my_stack.push('c')
+    my_stack.pop()
+    my_stack.pop()
+    actual = my_stack.top.value
+    expected = 'a'
+    assert actual == expected
+
 def test_stack_peek():
     my_stack = Stack()
-    my_stack.push('test')
-    my_stack.push('new')
+    my_stack.push(1)
+    my_stack.push(2)
     actual = my_stack.peek()
-    expected = 'new'
+    expected = 2
     assert actual == expected
 
 def test_queue_isEmpty():
@@ -47,7 +58,6 @@ def test_enqueue():
     expected = 'c'
     assert actual == expected
 
-# returns new front after initial front removed
 def test_dequeue():
     my_queue = Queue()
     my_queue.enqueue('a')
@@ -82,7 +92,6 @@ def test_pseudo_enqueue_multiple():
     expected = 20
     assert actual == expected
 
-# pseudo dequeue returns removed rear
 def test_pseudo_dequeue():
     my_pseudo = PseudoQueue()
     my_pseudo.enqueue('a')
@@ -91,3 +100,24 @@ def test_pseudo_dequeue():
     actual = my_pseudo.dequeue()
     expected = 'a'
     assert actual == expected
+
+def test_animal_shelter():
+    pass
+
+def test_animal_enqueue():
+    pass
+
+def test_animal_dequeue():
+    pass
+
+
+
+# --------------------------------
+
+# def test_pyfixture(string):
+#     actual = string
+#     expected = 'yes'
+#     assert actual == expected
+
+# @pytest.fixture:
+#     def string():

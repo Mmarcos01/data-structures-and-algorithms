@@ -9,23 +9,6 @@ class Stack:
     def __init__(self, top = None):
         self.top = top
 
-    def __str__(self):
-        output = ''
-        while self.top:
-            output += f'{ {self.top.value} } -> '
-            self.top = self.top.next
-        output += 'None'
-        return output
-
-    # def print_stack(self):
-    #     if self.top is None:
-    #         print("Empty Stack!")
-    #     else:
-    #         node = self.top
-    #         while node is not None:
-    #             print(node.value)
-    #             node = node.next
-
     def push(self, value):
         new_node = Node(value)
         new_node.next = self.top
@@ -52,9 +35,12 @@ class Stack:
 
 class Queue:
 
-    def __init__(self, front = None):
-        self.front = front
+    # def __init__(self, front = None):
+        # self.front = front
         # self.rear = None
+    def __init__(self):
+        self.front = None
+        self.rear = None
 
     def isEmpty(self):
         if self.front == None:
