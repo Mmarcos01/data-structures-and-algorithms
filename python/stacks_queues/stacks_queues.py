@@ -9,23 +9,6 @@ class Stack:
     def __init__(self, top = None):
         self.top = top
 
-    def __str__(self):
-        output = ''
-        while self.top:
-            output += f'{ {self.top.value} } -> '
-            self.top = self.top.next
-        output += 'None'
-        return output
-
-    # def print_stack(self):
-    #     if self.top is None:
-    #         print("Empty Stack!")
-    #     else:
-    #         node = self.top
-    #         while node is not None:
-    #             print(node.value)
-    #             node = node.next
-
     def push(self, value):
         new_node = Node(value)
         new_node.next = self.top
@@ -52,9 +35,9 @@ class Stack:
 
 class Queue:
 
-    def __init__(self, front = None):
-        self.front = front
-        # self.rear = None
+    def __init__(self):
+        self.front = None
+        self.rear = None
 
     def isEmpty(self):
         if self.front == None:
@@ -105,3 +88,51 @@ class PseudoQueue:
             popped = self.stack2.pop()
             self.stack1.push(popped)
         return removed
+
+class AnimalShelter:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+        self.length = 0
+
+    def enqueue(self, animal):
+        node = Node(animal)
+
+        if self.front is None:
+            self.front = node
+            self.rear = node
+        else:
+            self.rear.next = node
+            self.rear = node
+        self.length += 1
+
+    def dequeue(self, pref):
+
+        if self.front is None:
+            raise Exception("Animal Shelter is Empty")
+
+        if self.front.value["animal"] == pref:
+            dequed = self.front.value["animal"]
+            self.front = self.front.next
+            self.length -= 1
+            return dequed
+
+        rotation_count = self.length
+        answer = None
+
+        while rotation_count >= 0:
+            if self.front.value["animal"] == pref:
+                answer = self.front.value["animal"]
+                self.front = self.front.next
+                self.length -= 1
+                rotation_count -= 1
+                break
+            else:
+                dequed = self.front.value
+                dequed_node = Node(dequed)
+                self.front = self.front.next
+                self.rear.next = dequed_node
+                self.rear = dequed_node
+                rotation_count -= 1
+
+        return answer

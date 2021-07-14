@@ -1,6 +1,6 @@
 # Stacks and Queues
 
-## Challenge 1  Summary
+## Challenge 7 Summary
 
 ## Stack
 
@@ -63,7 +63,7 @@ Arguments: none
 Returns: Boolean indicating whether or not the queue is empty
 
 
-## Challenge 2  Summary
+## Challenge 8 Summary
 
 Implement a Queue using two Stacks.
 
@@ -87,8 +87,38 @@ Extracts a value from the PseudoQueue, using a first-in, first-out approach
 
 ![](stack-queue-pseudo.PNG)
 
+## Challenge 9 Summary
+
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+Implement the following methods:
+
+**enqueue**
+
+Arguments: animal (animal can be either a dog or a cat object)
+
+**dequeue**
+
+Arguments: pref (pref can be either "dog" or "cat")
+
+Return: either a dog or a cat, based on preference. If pref is not "dog" or "cat" then return null.
+
+## Whiteboard
+
+![](stack-queue-animal-shelter.PNG)
+
+## Collaborators
+
+Davee Sok
+Prabin Singh
+Daniel Dills
+Wondwosen
+Garfield Grant
+
 ### Change Log
 
 1.1: Completed testing for stacks and queues - 6 Jul 2021
 
-1.2: Completed testing for pseudoque - 7 Jul 2021
+1.2: Completed testing for pseudoqueue - 7 Jul 2021
+
+1.2: Completed whiteboard for AnimalShelter - 12 Jul 2021
+
