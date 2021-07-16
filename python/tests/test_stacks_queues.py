@@ -163,20 +163,6 @@ def test_dequeue_pref_at_end():
     expected = "cat"
     assert actual == expected
 
-# ======== Validate Brackets ========
-
-def test_bracket_to_stack():
-    pass
-
-def test_bracket_pop():
-    pass
-
-def test_unbalanced():
-    pass
-
-def test_balanced():
-    pass
-
 # ======== Pytest Fixtures ========
 
 def test_dequeue_on_empty_queue_raises_exception():

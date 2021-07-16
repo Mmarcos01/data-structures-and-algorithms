@@ -128,6 +128,9 @@ Write a function called validate brackets that takes in a string as an argument.
 
 ---
 
+## Resources
+[geeksforgeeks.org](https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-python/)
+
 ### Change Log
 
 1.1: Completed testing for stacks and queues - 6 Jul 2021

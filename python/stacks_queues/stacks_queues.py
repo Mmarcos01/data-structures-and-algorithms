@@ -136,10 +136,3 @@ class AnimalShelter:
                 rotation_count -= 1
 
         return answer
-
-
-
-# ======== Validate Brackets ========
-
-def validate_brackets(string):
-    pass
