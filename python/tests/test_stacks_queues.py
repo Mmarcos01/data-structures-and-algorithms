@@ -165,7 +165,17 @@ def test_dequeue_pref_at_end():
 
 # ======== Validate Brackets ========
 
+def test_bracket_to_stack():
+    pass
 
+def test_bracket_pop():
+    pass
+
+def test_unbalanced():
+    pass
+
+def test_balanced():
+    pass
 
 # ======== Pytest Fixtures ========
 

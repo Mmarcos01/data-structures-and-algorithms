@@ -137,9 +137,9 @@ class AnimalShelter:
 
         return answer
 
-open_list = ["[","{","("]
-close_list = ["]","}",")"]
 
 
 # ======== Validate Brackets ========
 
+def validate_brackets(string):
+    pass
