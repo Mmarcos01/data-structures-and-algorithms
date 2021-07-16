@@ -31,3 +31,5 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 [Code Challenge: Class 08](/python/stacks_queues/README.md)
 
 [Code Challenge: Class 09](/python/stacks_queues/README.md)
+
+[Code Challenge: Class 10](/python/stacks_queues/README.md)

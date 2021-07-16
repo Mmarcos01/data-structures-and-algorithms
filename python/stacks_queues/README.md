@@ -87,6 +87,8 @@ Extracts a value from the PseudoQueue, using a first-in, first-out approach
 
 ![](stack-queue-pseudo.PNG)
 
+---
+
 ## Challenge 9 Summary
 
 Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
@@ -114,6 +116,18 @@ Daniel Dills
 Wondwosen
 Garfield Grant
 
+---
+
+## Challenge 10 Summary
+
+Write a function called validate brackets that takes in a string as an argument. Return a boolean, representing whether or not the brackets in the string are balanced.
+
+## Whiteboard
+
+![](stack-queue-brackets.PNG)
+
+---
+
 ### Change Log
 
 1.1: Completed testing for stacks and queues - 6 Jul 2021
@@ -121,4 +135,6 @@ Garfield Grant
 1.2: Completed testing for pseudoqueue - 7 Jul 2021
 
 1.2: Completed whiteboard for AnimalShelter - 12 Jul 2021
+
+1.2: Completed whiteboard for bracket validation - 15 Jul 2021
 

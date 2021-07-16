@@ -136,3 +136,10 @@ class AnimalShelter:
                 rotation_count -= 1
 
         return answer
+
+open_list = ["[","{","("]
+close_list = ["]","}",")"]
+
+
+# ======== Validate Brackets ========
+
