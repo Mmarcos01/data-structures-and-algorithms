@@ -15,13 +15,10 @@ class BinaryTree:
         output = []
 
         def pre_order_traversal(root):
-            if root.value:
+            if root:
                 output.append(root.value)
-            if root.left:
                 pre_order_traversal(root.left)
-            if root.right:
                 pre_order_traversal(root.right)
-            return
         pre_order_traversal(self.root)
         return output
 
@@ -30,13 +27,10 @@ class BinaryTree:
         output = []
 
         def in_order_traversal(root):
-            if root.left:
+            if root:
                 in_order_traversal(root.left)
-            if root.value:
                 output.append(root.value)
-            if root.right:
                 in_order_traversal(root.right)
-            return
         in_order_traversal(self.root)
         return output
 
@@ -45,17 +39,17 @@ class BinaryTree:
         output = []
 
         def post_order_traversal(root):
-            if root.left:
+            if root:
                 post_order_traversal(root.left)
-            if root.right:
                 post_order_traversal(root.right)
-            if root.value:
                 output.append(root.value)
-            return
         post_order_traversal(self.root)
         return output
 
 class BinarySearchTree(BinaryTree):
+
+    def __init__(self):
+        self.root = None
 
     def add(value):
         new_node = Node(value)

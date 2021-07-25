@@ -64,3 +64,11 @@ def test_post_order_add_left_and_right():
     actual = tree.post_order()
     assert actual == [4, 5, 2, 3, 1]
 
+def test_bst_add():
+    tree = BinarySearchTree()
+    # tree.root.left = Node(2)
+    # tree.root.right = Node(3)
+    # insert = BinarySearchTree(tree)
+    # insert.add(4)
+    actual =  tree.add(1)
+    assert actual == 1
