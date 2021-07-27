@@ -6,32 +6,22 @@ def test_node_has_value():
     node = Node("apple")
     assert node.value == "apple"
 
-
-# @pytest.mark.skip("pending")
 def test_node_has_left_of_none():
     node = Node("apple")
     assert node.left is None
 
-
-# @pytest.mark.skip("pending")
 def test_node_has_right_of_none():
     node = Node("apple")
     assert node.right is None
 
-
-# @pytest.mark.skip("pending")
 def test_create_binary_tree():
     tree = BinaryTree()
     assert tree
 
-
-# @pytest.mark.skip("pending")
 def test_binary_tree_has_root():
     tree = BinaryTree()
     assert tree.root is None
 
-
-# @pytest.mark.skip("pending")
 def test_create_binary_search_tree():
     tree = BinarySearchTree()
     assert tree
@@ -64,11 +54,52 @@ def test_post_order_add_left_and_right():
     actual = tree.post_order()
     assert actual == [4, 5, 2, 3, 1]
 
-def test_bst_add():
+def test_bst_add_multiple():
     tree = BinarySearchTree()
-    # tree.root.left = Node(2)
-    # tree.root.right = Node(3)
-    # insert = BinarySearchTree(tree)
-    # insert.add(4)
-    actual =  tree.add(1)
-    assert actual == 1
+    tree.add(1)
+    tree.add(2)
+    tree.add(3)
+    actual = tree.pre_order()
+    assert tree.root.value == 1
+    assert actual == [1, 2, 3]
+
+def test_contains_true():
+    tree = BinarySearchTree()
+    tree.add(1)
+    tree.add(2)
+    tree.add(3)
+    actual = tree.contains(3)
+    assert actual == True
+
+def test_contains_false():
+    tree = BinarySearchTree()
+    tree.add(1)
+    tree.add(2)
+    tree.add(4)
+    actual = tree.contains(3)
+    assert actual == False
+
+def test_find_max():
+    tree = BinarySearchTree()
+    tree.add(1)
+    tree.add(2)
+    tree.add(4)
+    actual = tree.max()
+    assert actual == 4
+
+def test_find_max_2():
+    tree = BinarySearchTree()
+    tree.add(346)
+    tree.add(34)
+    tree.add(7532)
+    tree.add(65)
+    tree.add(57)
+    actual = tree.max()
+    assert actual == 7532
+
+def test_find_max_empty():
+    tree = BinarySearchTree()
+    actual = tree.max()
+    assert actual ==  "Empty Tree"
+
+
