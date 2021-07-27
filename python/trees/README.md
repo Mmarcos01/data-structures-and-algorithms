@@ -53,6 +53,9 @@ Write the following method for the Binary Tree class:
 - Returns: number
     - Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
+## Whiteboard
+![](tree-max.PNG)
+
 ## Collaborators
 
 Kassie Bradshaw
