@@ -1,6 +1,6 @@
 # Challenge Summary: Binary Tree and Binary Search Tree Implementation
 
-### Features
+### Feature Tasks
 
 **Node**
 
@@ -42,6 +42,29 @@ Create a Node class that has properties for the value stored in the node, the le
 
 ---
 
+# Challenge Summary: Find the Maximum Value in a Binary Tree
+
+### Feature Tasks
+
+Write the following method for the Binary Tree class:
+
+**Find maximum value**
+- Arguments: none
+- Returns: number
+    - Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Whiteboard
+![](tree-max.PNG)
+
+## Collaborators
+
+Kassie Bradshaw
+Garfield Grant
+
 ### Change Log
 
-1.1: Completed whiteboarding process - 24 Jul 2021
+1.1: Completed Binary Tree method - 24 Jul 2021
+
+1.2: Completed BST add and contains - 26 Jul 2021
+
+1.2: Began BST max method - 26 Jul 2021

@@ -48,22 +48,45 @@ class BinaryTree:
 
 class BinarySearchTree(BinaryTree):
 
-    def __init__(self):
-        self.root = None
-
-    def add(value):
+    def add(self, value):
         new_node = Node(value)
-        current = value.root
-        node = None
+        current = self.root
+
+        if current is None:
+            self.root = new_node
 
         while current:
-            node = current
-            if value < current.value:
+            if value > current.value:
+                if current.right is None:
+                    current.right = new_node
+                    return self
+                current = current.right
+
+            else:
+                if current.left is None:
+                    current.left = new_node
+                    return self
+                current = current.left
+
+    def contains(self, value):
+
+        current = self.root
+
+        while current:
+            if value > current.value:
+                current = current.right
+            elif value < current.value:
                 current = current.left
             else:
-                current = current.right
-        if node ==  None:
-            node = new_node
+                return True
+        return False
 
-    def contains(value):
-        pass
+    def max(self):
+        if self.root is None:
+            return "Empty Tree"
+        values = self.pre_order()
+        max_val = values[0]
+        for i in values:
+            if i > max_val:
+             max_val = i
+        return max_val
