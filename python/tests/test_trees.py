@@ -102,4 +102,26 @@ def test_find_max_empty():
     actual = tree.max()
     assert actual ==  "Empty Tree"
 
+def test_breadth_first():
+    tree = BinarySearchTree()
+    tree.root = Node(3)
+    tree.root.left = Node(2)
+    tree.root.right = Node(11)
+    tree.root.left.left = Node(1)
+    tree.root.right.right = Node(8)
+    actual = tree.breadth_first()
+    assert actual == [3, 2, 11, 1, 8]
 
+def test_negative(negative_tree):
+    actual = negative_tree.breadth_first()
+    assert actual == [-2, -7, -5, -2, -9]
+
+@pytest.fixture
+def negative_tree():
+    tree = BinarySearchTree()
+    tree.root = Node(-2)
+    tree.root.left = Node(-7)
+    tree.root.right = Node(-5)
+    tree.root.left.left = Node(-2)
+    tree.root.right.right = Node(-9)
+    return tree

@@ -61,10 +61,28 @@ Write the following method for the Binary Tree class:
 Kassie Bradshaw
 Garfield Grant
 
+---
+
+# Challenge Summary: Breath First
+
+### Feature Tasks
+Write a function called breadth first that takes in an arguments of a tree.
+The function will return a list of all values in the tree in the order they were encountered.
+
+## Whiteboard
+![](breadth_first.PNG)
+
+## Collaborators
+
+Garfield Grant
+Kassie Bradshaw
+
 ### Change Log
 
 1.1: Completed Binary Tree method - 24 Jul 2021
 
 1.2: Completed BST add and contains - 26 Jul 2021
 
-1.2: Began BST max method - 26 Jul 2021
+1.3: Began BST max method - 26 Jul 2021
+
+1.4: Breadth First - 29 Jul 2021

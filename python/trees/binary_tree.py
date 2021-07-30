@@ -1,3 +1,5 @@
+from stacks_queues.stacks_queues import Node, Queue
+
 class Node:
 
     def __init__(self, value = None):
@@ -90,3 +92,19 @@ class BinarySearchTree(BinaryTree):
             if i > max_val:
              max_val = i
         return max_val
+
+    def breadth_first(self):
+        if self.root is None:
+            return 'Empty Tree!'
+        list = []
+        queue = Queue()
+        queue.enqueue(self.root)
+        while not queue.isEmpty():
+            front = queue.dequeue()
+            list.append(front.value)
+
+            if front.left:
+                queue.enqueue(front.left)
+            if front.right:
+                queue.enqueue(front.right)
+        return list
