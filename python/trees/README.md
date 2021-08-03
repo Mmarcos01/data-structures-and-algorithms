@@ -77,6 +77,22 @@ The function will return a list of all values in the tree in the order they were
 Garfield Grant
 Kassie Bradshaw
 
+---
+
+# Challenge Summary: Fizz Buzz on a K-ary Tree
+
+### Feature Tasks
+Write a function called fizz-buzz-tree that takes in an argument of a k-ary tree.
+The function will return a new k-ary tree. Determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
+
+- If the value is divisible by 3, replace the value with “Fizz”
+- If the value is divisible by 5, replace the value with “Buzz”
+- If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+- If the value is not divisible by 3 or 5, simply turn the number into a String.
+
+## Whiteboard
+![](fizz_buzz_tree.PNG)
+
 ### Change Log
 
 1.1: Completed Binary Tree method - 24 Jul 2021
@@ -86,3 +102,5 @@ Kassie Bradshaw
 1.3: Began BST max method - 26 Jul 2021
 
 1.4: Breadth First - 29 Jul 2021
+
+1.5: Began FizzBuzz on K-ary Tree - 02 Aug 2021

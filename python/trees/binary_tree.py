@@ -108,3 +108,26 @@ class BinarySearchTree(BinaryTree):
             if front.right:
                 queue.enqueue(front.right)
         return list
+
+class KaryTree:
+
+    def __init__(self, children = None):
+        self.root = None
+        self.children = children
+
+    def fizz_buzz_tree(self):
+        if self.root is None:
+            return 'Empty Tree!'
+        queue = Queue()
+        queue.enqueue(self.root)
+        while not queue.isEmpty():
+            front = queue.dequeue()
+            if front.value % 3 == 0:
+                front.value = 'Fizz'
+            elif front.value % 5 == 0:
+                front.value = 'Buzz'
+            elif front.value % 15 == 0:
+                front.value == 'FizzBuzz'
+            else:
+                front.value = str(front.value)
+        front = front.next

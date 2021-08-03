@@ -1,5 +1,5 @@
 import pytest
-from trees.binary_tree import Node, BinaryTree, BinarySearchTree
+from trees.binary_tree import KaryTree, Node, BinaryTree, BinarySearchTree, KaryTree
 
 # @pytest.mark.skip("pending")
 def test_node_has_value():
@@ -115,6 +115,15 @@ def test_breadth_first():
 def test_negative(negative_tree):
     actual = negative_tree.breadth_first()
     assert actual == [-2, -7, -5, -2, -9]
+
+def test_kary_tree_fizzbuzz():
+    tree = KaryTree()
+    tree.root = Node(3)
+    tree.children[0] = Node(5)
+    tree.children[1] = Node(6)
+    tree.children[2] = Node(15)
+    actual = tree.fizz_buzz_tree()
+    assert actual.root == Node('Fizz')
 
 @pytest.fixture
 def negative_tree():
