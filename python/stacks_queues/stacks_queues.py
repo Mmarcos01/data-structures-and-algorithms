@@ -58,8 +58,7 @@ class Queue:
         if self.isEmpty():
             raise Exception("Queue is empty!")
         temp = self.front
-        temp = self.front.next
-        temp.next = None
+        self.front = temp.next
         return temp.value
 
     def peek(self):

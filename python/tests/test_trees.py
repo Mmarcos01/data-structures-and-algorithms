@@ -1,5 +1,5 @@
 import pytest
-from trees.binary_tree import Node, BinaryTree, BinarySearchTree
+from trees.binary_tree import KaryTree, Node, BinaryTree, BinarySearchTree, KaryTree
 
 # @pytest.mark.skip("pending")
 def test_node_has_value():
@@ -102,4 +102,35 @@ def test_find_max_empty():
     actual = tree.max()
     assert actual ==  "Empty Tree"
 
+def test_breadth_first():
+    tree = BinarySearchTree()
+    tree.root = Node(3)
+    tree.root.left = Node(2)
+    tree.root.right = Node(11)
+    tree.root.left.left = Node(1)
+    tree.root.right.right = Node(8)
+    actual = tree.breadth_first()
+    assert actual == [3, 2, 11, 1, 8]
 
+def test_negative(negative_tree):
+    actual = negative_tree.breadth_first()
+    assert actual == [-2, -7, -5, -2, -9]
+
+def test_kary_tree_fizzbuzz():
+    tree = KaryTree()
+    tree.root = Node(3)
+    tree.children[0] = Node(5)
+    tree.children[1] = Node(6)
+    tree.children[2] = Node(15)
+    actual = tree.fizz_buzz_tree()
+    assert actual.root == Node('Fizz')
+
+@pytest.fixture
+def negative_tree():
+    tree = BinarySearchTree()
+    tree.root = Node(-2)
+    tree.root.left = Node(-7)
+    tree.root.right = Node(-5)
+    tree.root.left.left = Node(-2)
+    tree.root.right.right = Node(-9)
+    return tree
