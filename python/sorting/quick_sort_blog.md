@@ -1,3 +1,7 @@
+## [See Code](https://github.com/Mmarcos01/data-structures-and-algorithms/blob/main/python/sorting/quick_sort.py)
+
+## [See Tests](https://github.com/Mmarcos01/data-structures-and-algorithms/blob/main/python/tests/test_quick_sort.py)
+
 # Quick Sort
 
 Quicksort is an in-place sorting algorithm that is a combination of partitions and recursion.
