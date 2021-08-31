@@ -3,6 +3,7 @@ def quick_sort(list, left, right):
         position = partition(list, left, right)
         quick_sort(list, left, position -1)
         quick_sort(list, position + 1, right)
+    return list
 
 
 def partition(list, left, right):
