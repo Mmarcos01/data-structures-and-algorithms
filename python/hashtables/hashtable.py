@@ -6,11 +6,11 @@ class Hashtable:
         self.buckets = [None] * self.size
 
     def hash(self, key):
-        sum = 0
+        hash_sum = 0
         for char in key:
             numeric_value = ord(char)
-            sum += numeric_value
-        product = sum * 599
+            hash_sum += numeric_value
+        product = hash_sum * 599
         index = product % self.size
         return index
 
@@ -26,11 +26,19 @@ class Hashtable:
         index = self.hash(key)
         if self.buckets[index] is None:
             raise KeyError()
-        else:
-            for kv_pair in self.buckets[index]:
-                if kv_pair[0] == key:
-                    return kv_pair[1]
-            raise KeyError()
+        current = self.buckets[index].head
+        while current:
+            if current.value[0] == key:
+                return current.value[1]
+            current = current.next
 
-    def contains():
-        pass
+    def contains(self, key):
+        index = self.hash(key)
+        if self.buckets[index] is None:
+            return False
+        current = self.buckets[index].head
+        while current:
+            if current.value[0] == key:
+                return True
+            current = current.next
+        return False
