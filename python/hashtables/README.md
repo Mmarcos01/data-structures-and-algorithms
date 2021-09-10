@@ -43,7 +43,7 @@ Write a function called repeated word that finds the first word to occur more th
 
 ## Whiteboard
 
-![]()
+![](hashtable-find-first-repeat.JPG)
 
 
 # Hashmap Tree Intersection
@@ -57,7 +57,7 @@ Find common values in 2 binary trees.
 
 ## Whiteboard
 
-![]()
+![](hash-tree-intersection.JPG)
 
 ## Collaborators
 
@@ -69,6 +69,6 @@ Find common values in 2 binary trees.
 
 ## Resources
 
-[GeeksforGeeks](https://www.geeksforgeeks.org/python-intersection-two-lists/) 
+[GeeksforGeeks](https://www.geeksforgeeks.org/python-intersection-two-lists/)
 
 [TechieDelight](https://www.techiedelight.com/preorder-tree-traversal-iterative-recursive/)
