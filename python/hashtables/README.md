@@ -1,3 +1,5 @@
+# Hashtable
+
 ## Features
 
 Implement a Hashtable Class with the following methods:
@@ -29,3 +31,44 @@ Successfully returns null for a key that does not exist in the hashtable
 Successfully handle a collision within the hashtable
 Successfully retrieve a value from a bucket within the hashtable that has a collision
 Successfully hash a key to an in-range value
+
+# Hashtable Repeated Word
+
+## Feature Tasks
+
+Write a function called repeated word that finds the first word to occur more than once in a string
+
+- Arguments: string
+- Return: string
+
+## Whiteboard
+
+![]()
+
+
+# Hashmap Tree Intersection
+
+## Feature Tasks
+
+Find common values in 2 binary trees.
+
+- Arguments: two binary trees
+- Return: array
+
+## Whiteboard
+
+![]()
+
+## Collaborators
+
+- Davee Sok
+- Woondwosen Tsige
+- Prabin Singh
+- Daniel Dills
+- Garfield Grant
+
+## Resources
+
+[GeeksforGeeks](https://www.geeksforgeeks.org/python-intersection-two-lists/) 
+
+[TechieDelight](https://www.techiedelight.com/preorder-tree-traversal-iterative-recursive/)
