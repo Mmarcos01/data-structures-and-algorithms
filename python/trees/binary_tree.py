@@ -14,6 +14,8 @@ class BinaryTree:
 
     def pre_order(self):
         # root >> left >> right
+        if self.root == None:
+            return "Tree is empty."
         output = []
 
         def pre_order_traversal(root):
