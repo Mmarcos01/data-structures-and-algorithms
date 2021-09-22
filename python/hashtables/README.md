@@ -75,7 +75,6 @@ The second parameter is a hashmap that has word strings as keys, and antonyms of
 
 ![](hashmap-left-joins.JPG)
 
-
 ## Collaborators
 
 - Davee Sok
