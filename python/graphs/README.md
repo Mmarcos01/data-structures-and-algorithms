@@ -48,6 +48,8 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
 # Data Structure: Graph Breadth First
 
+![](graph-breadth-first.JPG)
+
 [Prabin Singh](https://github.com/prabin544)
 [Davee Sok](https://github.com/daveeS987)
 [Wondwosen](https://github.com/WondwosenTsige)
