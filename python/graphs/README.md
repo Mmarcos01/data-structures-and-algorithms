@@ -39,18 +39,23 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 - A graph with only one node and edge can be properly returned
 - An empty graph properly returns null
 
-## Collaborators
-
-- Davee Sok
-- Woondwosen Tsige
-- Prabin Singh
-- Daniel Dills
 
 # Data Structure: Graph Breadth First
 
 ![](graph-breadth-first.JPG)
 
+
+# Data Structure: Graph Direct Flights
+
+## Features
+Write a function that takes in the arguments of a graph and list of city names. Determine whether the trip is possible with direct flights, and how much it would cost.
+
+![](flights.JPG)
+
+## Collaborators
+
 [Prabin Singh](https://github.com/prabin544)
 [Davee Sok](https://github.com/daveeS987)
 [Wondwosen](https://github.com/WondwosenTsige)
-[Marie Marcos](https://github.com/Mmarcos01)
+[Daniel Dills](https://github.com/danieldills)
+[Garfield Grant](https://github.com/Marleyman876)

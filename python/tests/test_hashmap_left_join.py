@@ -14,24 +14,7 @@ def test_empty_hashmap_returns_None():
     hashtable2 = Hashtable()
     hashtable1.add("tomato", "soup")
     actual = hashmap_left_join(hashtable1, hashtable2)
-    assert actual == None
-
-def test_hashmap_left_join():
-    hashtable1 = Hashtable()
-    hashtable2 = Hashtable()
-    hashtable1.add("tomato", "soup")
-    hashtable2.add("beef", "stew")
-    actual = hashmap_left_join(hashtable1, hashtable2)
-    assert actual == ["tomato", "soup", "beef", "stew"]
-
-def test_hashmap_left_join():
-    hashtable1 = Hashtable()
-    hashtable2 = Hashtable()
-    hashtable1.add("tomato", "soup")
-    hashtable2.add("tomato", "salad")
-    actual = hashmap_left_join(hashtable1, hashtable2)
-    assert actual == ["tomato", "soup", "salad"]
-
+    assert actual == [['tomato', 'soup', None]]
 
 def test_hashmap():
     assert hashmap_left_join
@@ -48,7 +31,6 @@ def test_hashmap_int_join(hashmap_int, hashmap_int2):
                 ['1','enamored','averse'],
                 ['3','employed','idle'],]
     assert actual == expected
-
 
 
 @pytest.fixture
