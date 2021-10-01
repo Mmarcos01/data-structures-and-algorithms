@@ -52,10 +52,17 @@ Write a function that takes in the arguments of a graph and list of city names. 
 
 ![](flights.JPG)
 
+# Data Structure: Graph Depth First
+
+## Features
+Conduct a depth first preorder traversal on a graph and return the nodes.
+
+![](graph-dfs.JPG)
+
 ## Collaborators
 
-[Prabin Singh](https://github.com/prabin544)
-[Davee Sok](https://github.com/daveeS987)
-[Wondwosen](https://github.com/WondwosenTsige)
-[Daniel Dills](https://github.com/danieldills)
-[Garfield Grant](https://github.com/Marleyman876)
+- [Prabin Singh](https://github.com/prabin544)
+- [Davee Sok](https://github.com/daveeS987)
+- [Wondwosen](https://github.com/WondwosenTsige)
+- [Daniel Dills](https://github.com/danieldills)
+- [Garfield Grant](https://github.com/Marleyman876)
