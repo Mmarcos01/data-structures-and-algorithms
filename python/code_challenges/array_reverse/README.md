@@ -1,4 +1,4 @@
-## Code Challenge 01: Reverse an array.
+## Code Challenge 01: Reverse an array/list.
 
 Write a function which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
