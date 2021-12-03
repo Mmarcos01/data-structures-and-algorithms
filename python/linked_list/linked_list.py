@@ -17,7 +17,6 @@ class LinkedList:
         current_value = self.head
         while current_value:
             output += f'{ {current_value.value} } -> '
-            #walk/traverse
             current_value = current_value.next
         output += 'None'
         return output
@@ -52,8 +51,6 @@ class LinkedList:
             if value == current.value:
                 break
             current = current.next
-     # if current is None: # if there is no head print message
- #     print("none found")
         new_node = Node(new_value)
         new_node.next = current.next
         current.next = new_node
