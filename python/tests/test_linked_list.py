@@ -107,3 +107,22 @@ def test_zip_two_lists():
     actual = zipLists(ll1,ll2)
     expected = "{'a'} -> {'b'} -> {'c'} -> {'d'} -> {'e'} -> {'f'} -> None"
     assert str(actual) == expected
+
+def test_zip_two_lists_different_sizes():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    ll1.append("a").append("c").append("e")
+    ll2.append("b")
+    actual = zipLists(ll1,ll2)
+    expected = "{'a'} -> {'b'} -> {'c'} -> {'e'} -> None"
+    assert str(actual) == expected
+
+def test2_zip_two_lists_different_sizes():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    ll1.append("a").append("c").append("e")
+    ll2.append("b").append("d").append("f").append("g")
+    actual = zipLists(ll1,ll2)
+    expected = "{'a'} -> {'b'} -> {'c'} -> {'d'} -> {'e'} -> {'f'} -> None"
+    assert str(actual) == expected
+

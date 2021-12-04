@@ -94,17 +94,15 @@ class LinkedList:
 
         return current.value
 
-
-def zipLists(list1, list2):
-    current_1 = list1.head
-    current_2 = list2.head
-    while current_1 and current_2:
-        list_1_next = current_1.next
-        list_2_next = current_2.next
-        current_1.next = current_2
-        current_2.next = list_1_next
-        current_1 = list_1_next
-        current_2 = list_2_next
-    list2.head = current_2
-    return list1
+def zipLists(ll1, ll2):
+    curr1 = ll1.head
+    curr2 = ll2.head
+    while curr1 and curr2:
+        temp1 = curr1.next
+        temp2 = curr2.next
+        curr1.next = curr2
+        curr2.next = temp1
+        curr1 = temp1
+        curr2 = temp2
+    return ll1
 
