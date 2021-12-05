@@ -7,6 +7,12 @@ class Node:
         self.left = None
         self.right = None
 
+class KaryNode:
+    def __init__(self, value=None, children=[]):
+        self.value = value
+        self.children = children
+
+
 class BinaryTree:
 
     def __init__(self):
@@ -113,23 +119,41 @@ class BinarySearchTree(BinaryTree):
 
 class KaryTree:
 
-    def __init__(self, children = None):
-        self.root = None
-        self.children = children
+    def __init__(self, node = None):
+        self.root = node
+        # self.children = children
 
-    def fizz_buzz_tree(self):
-        if self.root is None:
-            return 'Empty Tree!'
+    def kary_breadth_first(self):
         queue = Queue()
         queue.enqueue(self.root)
+        result = []
         while not queue.isEmpty():
             front = queue.dequeue()
-            if front.value % 3 == 0:
-                front.value = 'Fizz'
-            elif front.value % 5 == 0:
-                front.value = 'Buzz'
-            elif front.value % 15 == 0:
-                front.value == 'FizzBuzz'
-            else:
-                front.value = str(front.value)
-        front = front.next
+            for node in front.children:
+                queue.enqueue(node)
+            result.append(front.value)
+        return result
+
+def fizz_buzz_conditions(value):
+    if value % 15 == 0:
+        return "FizzBuzz"
+    if value % 3 == 0:
+        return "Fizz"
+    if value % 5 == 0:
+        return "Buzz"
+    else:
+        return str(value)
+
+
+def fizz_buzz_tree(tree):
+    if tree.root is None:
+        raise Exception("Tree is empty")
+    queue = Queue()
+    queue.enqueue(tree.root)
+    while not queue.isEmpty():
+        front = queue.dequeue()
+        front.value = fizz_buzz_conditions(front.value)
+        for node in front.children:
+            queue.enqueue(node)
+
+    return tree

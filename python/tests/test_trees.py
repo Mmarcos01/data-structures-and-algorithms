@@ -1,5 +1,5 @@
 import pytest
-from trees.binary_tree import KaryTree, Node, BinaryTree, BinarySearchTree, KaryTree
+from trees.binary_tree import KaryTree, KaryNode, Node, BinaryTree, BinarySearchTree, fizz_buzz_conditions, fizz_buzz_tree
 
 # @pytest.mark.skip("pending")
 def test_node_has_value():
@@ -116,14 +116,47 @@ def test_negative(negative_tree):
     actual = negative_tree.breadth_first()
     assert actual == [-2, -7, -5, -2, -9]
 
-def test_kary_tree_fizzbuzz():
+def test_kary_tree_bfs_single_node():
     tree = KaryTree()
-    tree.root = Node(3)
-    tree.children[0] = Node(5)
-    tree.children[1] = Node(6)
-    tree.children[2] = Node(15)
-    actual = tree.fizz_buzz_tree()
-    assert actual.root == Node('Fizz')
+    tree.root = KaryNode(3)
+    assert tree.root.value == 3
+    assert tree.root.children == []
+
+def test_kary_tree_bfs_returns_correct_values():
+    node5 = KaryNode(5)
+    node4 = KaryNode(4, [node5])
+    node3 = KaryNode(3)
+    node2 = KaryNode(2)
+    node1 = KaryNode(1, [node2, node3, node4])
+    tree = KaryTree(node1)
+    actual = tree.kary_breadth_first()
+    expected = [1, 2, 3, 4, 5]
+    assert actual == expected
+
+def test_fizz_buzz_conditions_returns_fizzbuzz():
+    assert fizz_buzz_conditions(15) == "FizzBuzz"
+def test_fizz_buzz_conditions_returns_fizz():
+    assert fizz_buzz_conditions(3) == "Fizz"
+def test_fizz_buzz_conditions_returns_buzz():
+    assert fizz_buzz_conditions(5) == "Buzz"
+
+def test_fizz_buzz_tree_raises_error_on_empty_tree():
+    empty_tree = KaryTree()
+    with pytest.raises(Exception):
+        fizz_buzz_tree(empty_tree)
+
+def test_kary_tree_bfs_returns_correct_values():
+    node6 = KaryNode(30)
+    node5 = KaryNode(5)
+    node4 = KaryNode(4, [node5, node6])
+    node3 = KaryNode(3)
+    node2 = KaryNode(2)
+    node1 = KaryNode(1, [node2, node3, node4])
+    tree = KaryTree(node1)
+    fizz_buzz_tree(tree)
+    actual = tree.kary_breadth_first()
+    expected = ["1", "2", "Fizz", "4", "Buzz", "FizzBuzz"]
+    assert actual == expected
 
 @pytest.fixture
 def negative_tree():
