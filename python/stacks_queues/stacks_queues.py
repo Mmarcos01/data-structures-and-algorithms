@@ -84,8 +84,8 @@ class PseudoQueue:
             self.stack2.push(temp)
         removed = self.stack2.pop()
         while not self.stack2.isEmpty():
-            popped = self.stack2.pop()
-            self.stack1.push(popped)
+            temp = self.stack2.pop()
+            self.stack1.push(temp)
         return removed
 
 class AnimalShelter:
