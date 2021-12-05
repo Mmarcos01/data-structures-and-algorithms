@@ -111,10 +111,10 @@ class AnimalShelter:
             raise Exception("Animal Shelter is Empty")
 
         if self.front.value["animal"] == pref:
-            dequed = self.front.value["animal"]
+            dequeued = self.front.value["animal"]
             self.front = self.front.next
             self.length -= 1
-            return dequed
+            return dequeued
 
         rotation_count = self.length
         answer = None
@@ -127,11 +127,11 @@ class AnimalShelter:
                 rotation_count -= 1
                 break
             else:
-                dequed = self.front.value
-                dequed_node = Node(dequed)
+                dequeued = self.front.value
+                dequeued_node = Node(dequeued)
                 self.front = self.front.next
-                self.rear.next = dequed_node
-                self.rear = dequed_node
+                self.rear.next = dequeued_node
+                self.rear = dequeued_node
                 rotation_count -= 1
 
         return answer
