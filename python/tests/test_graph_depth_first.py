@@ -1,7 +1,7 @@
 # import pytest
 # from stacks_queues.stacks_queues import Node, Stack
 # from graphs.graph import Graph, Vertex
-# from graphs.graph_depth_first import graph_depth_fist
+# from graphs.graph_depth_first import graph_depth_first
 
 # def test_instantiate_graph():
 #     graph = Graph()

@@ -1,7 +1,7 @@
 # from stacks_queues.stacks_queues import Node, Stack
 # from graph import Graph
 
-# def graph_depth_fist(vertex):
+# def graph_depth_first(vertex):
 
 #     dfs_list = []
 #     stack = Stack()
