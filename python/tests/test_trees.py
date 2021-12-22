@@ -54,6 +54,15 @@ def test_post_order_add_left_and_right():
     actual = tree.post_order()
     assert actual == [4, 5, 2, 3, 1]
 
+def test_max_binary_tree():
+    tree = BinaryTree()
+    tree.root = Node(1)
+    tree.root.left = Node(2)
+    tree.root.right = Node(3)
+    tree.root.left.left = Node(7)
+    tree.root.left.right = Node(5)
+    assert tree.find_max_using_order_function() == 7
+
 def test_bst_add_multiple():
     tree = BinarySearchTree()
     tree.add(1)
@@ -102,14 +111,14 @@ def test_find_max_empty():
     actual = tree.max()
     assert actual ==  "Empty Tree"
 
-def test_breadth_first():
+def breadth_first_traversal():
     tree = BinarySearchTree()
     tree.root = Node(3)
     tree.root.left = Node(2)
     tree.root.right = Node(11)
     tree.root.left.left = Node(1)
     tree.root.right.right = Node(8)
-    actual = tree.breadth_first()
+    actual = tree.binary_tree_breadth_first()
     assert actual == [3, 2, 11, 1, 8]
 
 def test_negative(negative_tree):

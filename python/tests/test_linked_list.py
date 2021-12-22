@@ -15,14 +15,6 @@ def test_instantiate_node():
     assert actual == expected
     assert node.next == None
 
-# needs a node included, and a node to insert linked list is already instantiated inside the class method
-# def test_insert():
-#     node = Node('blue', None)
-#     insert_node = Node('red', node)
-#     actual = insert_node.next.value
-#     expected = 'blue'
-#     assert actual == expected
-
 def test_insert():
     linklist = LinkedList()
     linklist.insert("a")
@@ -56,7 +48,6 @@ def test_append():
     assert actual == expected
 
 def test_insertAfter():
-    # my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
     my_list = LinkedList()
     my_list.append('green').append('blue').append('red')
     my_list.insertAfter('blue', 'orange')
@@ -65,7 +56,6 @@ def test_insertAfter():
     assert actual == expected
 
 def test_insertBefore():
-    # my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
     my_list = LinkedList()
     my_list.append('green').append('blue').append('red')
     my_list.insertBefore('blue', 'orange')

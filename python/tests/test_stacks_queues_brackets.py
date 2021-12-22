@@ -1,8 +1,6 @@
 import pytest
 from stacks_queues.stacks_queues_brackets import validate_brackets
 
-# # ======== Validate Brackets ========
-
 def test_empty_is_balanced():
     actual = validate_brackets("")
     expected = True

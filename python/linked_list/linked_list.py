@@ -13,13 +13,12 @@ class LinkedList:
         self.head = head
 
     def __str__(self):
-        output = ''
         current_value = self.head
+        output = ''
         while current_value:
             output += f'{ {current_value.value} } -> '
             current_value = current_value.next
-        output += 'None'
-        return output
+        return output + 'None'
 
     def insert(self, any_value):
         self.head = Node(any_value, self.head)
@@ -68,10 +67,8 @@ class LinkedList:
         current.next = new_node
 
     def kth_from_the_end(self, k):
-
         if k < 0:
             return "K is negative"
-
         if self.head is None:
             return None
 
@@ -81,10 +78,8 @@ class LinkedList:
         while current:
             count += 1
             current = current.next
-
         if count < k:
             raise Exception ('k is larger than link list')
-
         current = self.head
         count = count - k
 

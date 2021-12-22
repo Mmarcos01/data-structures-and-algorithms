@@ -12,7 +12,6 @@ class KaryNode:
         self.value = value
         self.children = children
 
-
 class BinaryTree:
 
     def __init__(self):
@@ -56,6 +55,35 @@ class BinaryTree:
         post_order_traversal(self.root)
         return output
 
+    def breadth_first_traversal(input_tree):
+        if input_tree.root == None:
+            return "Tree is empty."
+        queue = Queue()
+        queue.enqueue(input_tree.root)
+        result = []
+        while not queue.is_empty():
+            front = queue.dequeue()
+            if front.left:
+                queue.enqueue(front.left)
+            if front.right:
+                queue.enqueue(front.right)
+            result.append(front.value)
+        return result
+
+    def find_max_using_order_function(self):
+
+        if self.root is None:
+            return "Tree is empty"
+
+        value_list = self.pre_order()
+        max_val = value_list[0]
+
+        for i in value_list:
+            if i > max_val:
+                max_val = i
+
+        return max_val
+
 class BinarySearchTree(BinaryTree):
 
     def add(self, value):
@@ -79,16 +107,18 @@ class BinarySearchTree(BinaryTree):
                 current = current.left
 
     def contains(self, value):
+        if self.root is None:
+            return None
 
         current = self.root
-
         while current:
+            if current.value == value:
+                return True
             if value > current.value:
                 current = current.right
-            elif value < current.value:
-                current = current.left
             else:
-                return True
+                current = current.left
+
         return False
 
     def max(self):
@@ -107,7 +137,7 @@ class BinarySearchTree(BinaryTree):
         list = []
         queue = Queue()
         queue.enqueue(self.root)
-        while not queue.isEmpty():
+        while not queue.is_empty():
             front = queue.dequeue()
             list.append(front.value)
 
@@ -121,13 +151,12 @@ class KaryTree:
 
     def __init__(self, node = None):
         self.root = node
-        # self.children = children
 
     def kary_breadth_first(self):
         queue = Queue()
         queue.enqueue(self.root)
         result = []
-        while not queue.isEmpty():
+        while not queue.is_empty():
             front = queue.dequeue()
             for node in front.children:
                 queue.enqueue(node)
@@ -150,7 +179,7 @@ def fizz_buzz_tree(tree):
         raise Exception("Tree is empty")
     queue = Queue()
     queue.enqueue(tree.root)
-    while not queue.isEmpty():
+    while not queue.is_empty():
         front = queue.dequeue()
         front.value = fizz_buzz_conditions(front.value)
         for node in front.children:
