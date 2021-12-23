@@ -59,6 +59,22 @@ Find common values in 2 binary trees.
 
 ![](hash-tree-intersection.JPG)
 
+# Hashmap Left Join
+
+## Feature Tasks
+
+Write a function that LEFT JOINs two hashmaps into a single data structure.
+
+- Arguments: two hash maps.
+The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+
+- Return: a datastructure with LEFT JOIN logic
+
+## Whiteboard
+
+![](hashmap-left-joins.JPG)
+
 ## Collaborators
 
 - Davee Sok

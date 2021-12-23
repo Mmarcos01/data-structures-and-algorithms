@@ -10,26 +10,21 @@ class Stack:
         self.top = top
 
     def push(self, value):
-        new_node = Node(value)
-        new_node.next = self.top
-        self.top = new_node
+        self.top = Node(value, self.top)
 
-    def isEmpty(self):
-        if self.top == None:
-            return True
-        else:
-            return False
+    def is_empty(self):
+        '''Return true if self.top is None, else return false'''
+        return self.top == None
 
     def pop(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("No popping. Stack is empty!")
         temp = self.top
         self.top = self.top.next
-        temp.next = None
         return temp.value
 
     def peek(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("No peeking. Stack is empty!")
         return self.top.value
 
@@ -39,15 +34,13 @@ class Queue:
         self.front = None
         self.rear = None
 
-    def isEmpty(self):
-        if self.front == None:
-            return True
-        else:
-            return False
+    def is_empty(self):
+        '''Return true if self.top is None, else return false'''
+        return self.front == None
 
     def enqueue(self, value):
         new_node = Node(value)
-        if self.isEmpty():
+        if self.is_empty():
             self.front = new_node
             self.rear = new_node
         else:
@@ -55,14 +48,14 @@ class Queue:
             self.rear = new_node
 
     def dequeue(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("Queue is empty!")
         temp = self.front
         self.front = temp.next
         return temp.value
 
     def peek(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("No Peeking. Queue is empty!")
         return self.front.value
 
@@ -77,61 +70,48 @@ class PseudoQueue:
 
     # check the top, if exists, take the value and push it into stack 2
     def dequeue(self):
-        if self.stack1.isEmpty():
+        if self.stack1.is_empty():
             raise Exception("Can't dequeue. Stack is empty.")
-        while not self.stack1.isEmpty():
+        while not self.stack1.is_empty():
             temp = self.stack1.pop()
             self.stack2.push(temp)
         removed = self.stack2.pop()
-        while not self.stack2.isEmpty():
-            popped = self.stack2.pop()
-            self.stack1.push(popped)
+        while not self.stack2.is_empty():
+            temp = self.stack2.pop()
+            self.stack1.push(temp)
         return removed
 
 class AnimalShelter:
     def __init__(self):
-        self.front = None
-        self.rear = None
-        self.length = 0
+        self.shelter = Queue()
 
     def enqueue(self, animal):
-        node = Node(animal)
-
-        if self.front is None:
-            self.front = node
-            self.rear = node
-        else:
-            self.rear.next = node
-            self.rear = node
-        self.length += 1
+        self.shelter.enqueue(animal)
 
     def dequeue(self, pref):
+        if not pref in ["dog", "cat"]:
+            return None
+        current = self.shelter.dequeue()
+        while current:
+            if self._is_preferred(pref, current):
+                    return current
+            self.shelter.enqueue(current)
+            current = self.shelter.dequeue()
+        return current
 
-        if self.front is None:
-            raise Exception("Animal Shelter is Empty")
+    def _is_preferred(self, pref, animal):
+        if pref == "cat":
+            class_type = Cat
+        elif pref == "dog":
+            class_type = Dog
 
-        if self.front.value["animal"] == pref:
-            dequed = self.front.value["animal"]
-            self.front = self.front.next
-            self.length -= 1
-            return dequed
+        return isinstance(animal, class_type)
 
-        rotation_count = self.length
-        answer = None
+class Dog:
+    def __repr__(self):
+        return "I am a Dog instance"
 
-        while rotation_count >= 0:
-            if self.front.value["animal"] == pref:
-                answer = self.front.value["animal"]
-                self.front = self.front.next
-                self.length -= 1
-                rotation_count -= 1
-                break
-            else:
-                dequed = self.front.value
-                dequed_node = Node(dequed)
-                self.front = self.front.next
-                self.rear.next = dequed_node
-                self.rear = dequed_node
-                rotation_count -= 1
 
-        return answer
+class Cat:
+    def __repr__(self):
+        return "I am a Cat instance"

@@ -1,3 +1,4 @@
+import pytest
 from linked_list.linked_list import LinkedList, Node, zipLists
 
 def test_import():
@@ -15,10 +16,10 @@ def test_instantiate_node():
     assert node.next == None
 
 def test_insert():
-    node = Node('blue', None)
-    insert_node = Node('red', node)
-    actual = insert_node.next.value
-    expected = 'blue'
+    linklist = LinkedList()
+    linklist.insert("a")
+    actual = linklist.head.value
+    expected = "a"
     assert actual == expected
 
 def test_includes_and_inserts():
@@ -40,21 +41,23 @@ def test_to_string():
     assert actual == expected
 
 def test_append():
-    my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
-    my_list.append('orange')
+    my_list = LinkedList()
+    my_list.append('orange').append('purple')
     actual = my_list.__str__()
-    expected = "{'green'} -> {'blue'} -> {'red'} -> {'orange'} -> None"
+    expected = "{'orange'} -> {'purple'} -> None"
     assert actual == expected
 
 def test_insertAfter():
-    my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
+    my_list = LinkedList()
+    my_list.append('green').append('blue').append('red')
     my_list.insertAfter('blue', 'orange')
     actual = my_list.__str__()
     expected = "{'green'} -> {'blue'} -> {'orange'} -> {'red'} -> None"
     assert actual == expected
 
 def test_insertBefore():
-    my_list = LinkedList(Node('green', Node('blue', Node ('red'))))
+    my_list = LinkedList()
+    my_list.append('green').append('blue').append('red')
     my_list.insertBefore('blue', 'orange')
     actual = my_list.__str__()
     expected = "{'green'} -> {'orange'} -> {'blue'} -> {'red'} -> None"
@@ -104,6 +107,24 @@ def test_zip_two_lists():
     ll2 = LinkedList()
     ll1.append("a").append("c").append("e")
     ll2.append("b").append("d").append("f")
+    actual = zipLists(ll1,ll2)
+    expected = "{'a'} -> {'b'} -> {'c'} -> {'d'} -> {'e'} -> {'f'} -> None"
+    assert str(actual) == expected
+
+def test_zip_two_lists_different_sizes():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    ll1.append("a").append("c").append("e")
+    ll2.append("b")
+    actual = zipLists(ll1,ll2)
+    expected = "{'a'} -> {'b'} -> {'c'} -> {'e'} -> None"
+    assert str(actual) == expected
+
+def test2_zip_two_lists_different_sizes():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    ll1.append("a").append("c").append("e")
+    ll2.append("b").append("d").append("f").append("g")
     actual = zipLists(ll1,ll2)
     expected = "{'a'} -> {'b'} -> {'c'} -> {'d'} -> {'e'} -> {'f'} -> None"
     assert str(actual) == expected

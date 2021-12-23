@@ -13,14 +13,12 @@ class LinkedList:
         self.head = head
 
     def __str__(self):
-        output = ''
         current_value = self.head
+        output = ''
         while current_value:
             output += f'{ {current_value.value} } -> '
-            #walk/traverse
             current_value = current_value.next
-        output += 'None'
-        return output
+        return output + 'None'
 
     def insert(self, any_value):
         self.head = Node(any_value, self.head)
@@ -52,8 +50,6 @@ class LinkedList:
             if value == current.value:
                 break
             current = current.next
-     # if current is None: # if there is no head print message
- #     print("none found")
         new_node = Node(new_value)
         new_node.next = current.next
         current.next = new_node
@@ -71,10 +67,8 @@ class LinkedList:
         current.next = new_node
 
     def kth_from_the_end(self, k):
-
         if k < 0:
             return "K is negative"
-
         if self.head is None:
             return None
 
@@ -84,10 +78,8 @@ class LinkedList:
         while current:
             count += 1
             current = current.next
-
         if count < k:
             raise Exception ('k is larger than link list')
-
         current = self.head
         count = count - k
 
@@ -97,17 +89,15 @@ class LinkedList:
 
         return current.value
 
-
-def zipLists(list1, list2):
-    current_1 = list1.head
-    current_2 = list2.head
-    while current_1 and current_2:
-        list_1_next = current_1.next
-        list_2_next = current_2.next
-        current_1.next = current_2
-        current_2.next = list_1_next
-        current_1 = list_1_next
-        current_2 = list_2_next
-    list2.head = current_2
-    return list1
+def zipLists(ll1, ll2):
+    curr1 = ll1.head
+    curr2 = ll2.head
+    while curr1 and curr2:
+        temp1 = curr1.next
+        temp2 = curr2.next
+        curr1.next = curr2
+        curr2.next = temp1
+        curr1 = temp1
+        curr2 = temp2
+    return ll1
 
