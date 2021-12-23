@@ -8,7 +8,7 @@ def graph_depth_first(vertex):
     visited = set()
 
     stack.push(vertex)
-    while not stack.isEmpty():
+    while not stack.is_empty():
         stack.peek()
 
         for child in stack.top.next:
