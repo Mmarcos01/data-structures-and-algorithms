@@ -25,7 +25,8 @@ class Hashtable:
     def get(self, key):
         index = self.hash(key)
         if self.buckets[index] is None:
-            raise KeyError()
+            # return KeyError()
+            return None
         current = self.buckets[index].head
         while current:
             if current.value[0] == key:

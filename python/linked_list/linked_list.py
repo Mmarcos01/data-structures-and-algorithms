@@ -101,3 +101,18 @@ def zipLists(ll1, ll2):
         curr2 = temp2
     return ll1
 
+# def zip_linked_lists(ll1, ll2):
+
+#     current1= ll1.head
+#     current2= ll2.head
+
+#     while current1 and current2:
+#         temp1 = current1.next
+#         temp2= current2.next
+#         current1.next = current2
+#         if temp1:
+#             current2.next = temp1
+#         current1 = temp1
+#         current2 = temp2
+
+#     return ll1 if ll1.head else ll2
